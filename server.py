@@ -13,6 +13,7 @@ class Websocket_Server():
 
     def message_received(self, client, server, message):
         print("Client({}) said,{}".format(client["id"], message))
+        self.server.send_message(client,"5")
 
     def run(self):
         self.server.set_fn_new_client(self.new_client)
